@@ -1,11 +1,6 @@
 # Dependencies
 /node_modules
-/.pnp
-.pnp.js
-.yarn/install-state.gz
-
-# Testing
-/coverage
+*.log
 
 # Next.js
 /.next/
@@ -14,17 +9,9 @@
 # Production
 /build
 
-# Misc
-.DS_Store
-*.pem
-
-# Debug
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
-
-# Local env files
+# Environment files
 .env*.local
+.env
 
 # Vercel
 .vercel
@@ -39,11 +26,20 @@ next-env.d.ts
 
 # OS
 Thumbs.db
-*.log
+.DS_Store
+
+# Package managers
+yarn-error.log*
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
 
 # Cache
 .cache/
 .turbo/
 
-# Cloudflare
-/wrangler.toml
+# Misc
+*.pem
+
+# Testing
+/coverage
