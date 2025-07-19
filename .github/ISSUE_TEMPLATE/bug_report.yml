@@ -1,0 +1,63 @@
+name: 🐛 Bug Report
+description: Relatório de bug
+title: "[BUG] "
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por reportar um bug! Por favor, preencha as informações abaixo.
+
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: O que aconteceu?
+      description: Descreva o bug de forma clara e concisa
+      placeholder: Ex. O aplicativo travou quando...
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Comportamento esperado
+      description: O que você esperava que acontecesse?
+      placeholder: Ex. Eu esperava que...
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Passos para reproduzir
+      description: |
+        Passos para reproduzir o comportamento:
+        1. Vá para '...'
+        2. Clique em '....'
+        3. Role para baixo até '....'
+        4. Veja o erro
+      placeholder: |
+        1. 
+        2. 
+        3. 
+    validations:
+      required: true
+
+  - type: textarea
+    id: environment
+    attributes:
+      label: Ambiente
+      description: Informações sobre seu ambiente
+      placeholder: |
+        - OS: [ex. Windows 11, macOS 12.0, Ubuntu 20.04]
+        - Navegador: [ex. Chrome 91, Firefox 89, Safari 14]
+        - Versão do Node.js: [ex. 18.0.0]
+    validations:
+      required: true
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Logs relevantes
+      description: Cole aqui quaisquer logs relevantes
+      render: shell

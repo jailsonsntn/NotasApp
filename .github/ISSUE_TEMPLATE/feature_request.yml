@@ -1,0 +1,51 @@
+name: ✨ Feature Request
+description: Sugestão de nova funcionalidade
+title: "[FEATURE] "
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Obrigado por sugerir uma nova funcionalidade! Por favor, preencha as informações abaixo.
+
+  - type: textarea
+    id: summary
+    attributes:
+      label: Resumo da funcionalidade
+      description: Descreva brevemente a funcionalidade que você gostaria de ver
+      placeholder: Ex. Adicionar suporte para...
+    validations:
+      required: true
+
+  - type: textarea
+    id: motivation
+    attributes:
+      label: Motivação
+      description: Por que essa funcionalidade seria útil?
+      placeholder: Ex. Isso ajudaria porque...
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Solução proposta
+      description: Como você imagina que essa funcionalidade funcionaria?
+      placeholder: Ex. Eu gostaria que...
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternativas consideradas
+      description: Você considerou outras soluções ou funcionalidades?
+      placeholder: Ex. Uma alternativa seria...
+
+  - type: checkboxes
+    id: terms
+    attributes:
+      label: Checklist
+      options:
+        - label: Eu procurei por issues similares antes de criar esta
+          required: true
+        - label: Esta funcionalidade faria sentido para outros usuários, não apenas para mim
+          required: true

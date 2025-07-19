@@ -1,6 +1,12 @@
-# NotasApp - Aplicativo de Notas Next.js
+# NotasApp 📝
 
-NotasApp é um aplicativo web completo para gerenciamento de notas e tarefas, desenvolvido com Next.js e tecnologias modernas para oferecer uma experiência rica e responsiva.
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg)](https://github.com/jailsonsntn/NotasApp/blob/master/LICENSE)
+[![Next.js](https://img.shields.io/badge/Next.js-15.1.4-black)](https://nextjs.org/)
+[![React](https://img.shields.io/badge/React-19-blue)](https://reactjs.org/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind%20CSS-3-38B2AC)](https://tailwindcss.com/)
+
+Um aplicativo web completo para gerenciamento de notas e tarefas, desenvolvido com Next.js e tecnologias modernas para oferecer uma experiência rica e responsiva.
 
 ## 🌟 Funcionalidades
 
@@ -44,29 +50,31 @@ cd NotasApp
 2. Instale as dependências:
 ```bash
 npm install
+# ou
+pnpm install
 ```
 
-3. Configure as variáveis de ambiente:
-```bash
-cp .env.example .env.local
-```
-
-Edite o arquivo `.env.local` com suas configurações:
-```
-NEXT_PUBLIC_API_URL=https://eqhbjuiz.manus.space/api
-NEXT_PUBLIC_APP_URL=https://eqhbjuiz.manus.space
-NEXT_PUBLIC_APP_NAME=NotasApp
-NODE_ENV=development
-```
-
-4. Execute o servidor de desenvolvimento:
+3. Execute o servidor de desenvolvimento:
 ```bash
 npm run dev
+# ou
+pnpm dev
 ```
 
-Abra [http://localhost:3000](http://localhost:3000) no seu navegador.
+Abra [http://localhost:3002](http://localhost:3002) no seu navegador.
 
-## 🏗️ Estrutura do Projeto
+## � Demonstração
+
+### 📸 Screenshots
+- **Interface Principal**: Grid responsivo de notas com categorias
+- **Modo Escuro**: Suporte completo a tema escuro/claro
+- **Edição de Notas**: Modal intuitivo para criação e edição
+- **Busca Avançada**: Filtros por categoria, tags e texto
+
+### 🔗 Demo Online
+> Em breve - Deploy automático via GitHub Actions
+
+## �🏗️ Estrutura do Projeto
 
 ```
 src/
@@ -131,18 +139,23 @@ O sistema inclui funções para:
 - Categorias personalizadas com cores
 - Preferências do usuário
 
-## 🌐 Implantação
+## 🚀 Deploy
 
 ### Vercel (Recomendado)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/jailsonsntn/NotasApp)
+
 ```bash
 npm run build
-vercel --prod
+npx vercel --prod
 ```
 
-### Cloudflare Workers
+### Netlify
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/jailsonsntn/NotasApp)
+
+### Cloudflare Pages
 ```bash
-npm run build:worker
-npm run preview
+npm run build
+npx wrangler pages publish out
 ```
 
 ## 📖 Manual Completo
@@ -155,22 +168,35 @@ Para documentação detalhada, consulte o arquivo `manualapp.txt` que contém:
 
 ## 🤝 Contribuição
 
+Contribuições são bem-vindas! Para contribuir:
+
 1. Fork o projeto
-2. Crie uma branch para sua feature (`git checkout -b feature/AmazingFeature`)
-3. Commit suas mudanças (`git commit -m 'Add some AmazingFeature'`)
-4. Push para a branch (`git push origin feature/AmazingFeature`)
+2. Crie uma branch para sua feature (`git checkout -b feature/MinhaFeature`)
+3. Commit suas mudanças (`git commit -m 'Add: Minha nova feature'`)
+4. Push para a branch (`git push origin feature/MinhaFeature`)
 5. Abra um Pull Request
 
-## 📝 Licença
+### � Roadmap
+- [ ] Sincronização com backend em tempo real
+- [ ] Notificações push para lembretes
+- [ ] Colaboração em tempo real
+- [ ] Aplicativo mobile (React Native)
+- [ ] Plugin para editores de código
+- [ ] API REST completa
+- [ ] Importação/exportação em múltiplos formatos
 
-Este projeto está sob a licença MIT. Veja o arquivo `LICENSE` para mais detalhes.
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+## 👨‍💻 Autor
+
+**Jailson Santana**
+- GitHub: [@jailsonsntn](https://github.com/jailsonsntn)
+- Email: jailsonjs55@gmail.com
 
 ---
 
 Desenvolvido com ❤️ para organização e produtividade.
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+⭐ Se este projeto ajudou você, considere dar uma estrela!
