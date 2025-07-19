@@ -37,8 +37,8 @@ NotasApp é um aplicativo web completo para gerenciamento de notas e tarefas, de
 
 1. Clone o repositório:
 ```bash
-git clone <repository-url>
-cd NotasAppNextjs
+git clone https://github.com/jailsonsntn/NotasApp.git
+cd NotasApp
 ```
 
 2. Instale as dependências:
