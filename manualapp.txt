@@ -1,0 +1,236 @@
+Manual do NotasApp - Documentação Completa
+Sumário
+Visão Geral
+Estrutura do Projeto
+Bibliotecas e Tecnologias
+Funcionalidades
+Componentes e Hooks
+Fluxos de Usuário
+Armazenamento e Sincronização
+Implantação
+Backup e Restauração
+Visão Geral
+O NotasApp é um aplicativo web completo para gerenciamento de notas e tarefas, desenvolvido com tecnologias modernas para oferecer uma experiência rica e responsiva. O aplicativo permite aos usuários criar, editar, organizar e sincronizar notas entre dispositivos, com suporte a categorização, favoritos, arquivamento e muito mais.
+O projeto evoluiu em várias fases:
+Versão inicial com HTML, CSS e JavaScript puro
+Versão com sincronização em nuvem (NotasAppCloud)
+Versão final com Next.js para implantação permanente
+Estrutura do Projeto
+O projeto está organizado em três principais versões:
+NotasApp (Versão Inicial)
+/NotasApp/
+├── index.html        # Página principal
+├── css/
+│   └── styles.css    # Estilos da aplicação
+└── js/
+    └── app.js        # Lógica da aplicação
+NotasAppCloud (Versão com Backend)
+/NotasAppCloud/
+├── frontend/
+│   ├── index.html    # Interface do usuário
+│   ├── css/
+│   │   └── cloud.css # Estilos específicos da nuvem
+│   └── js/
+│       └── sync.js   # Lógica de sincronização
+├── backend/
+│   ├── server.js     # Servidor Express
+│   ├── config/
+│   │   ├── config.js     # Configurações gerais
+│   │   └── database.js   # Configuração do MongoDB
+│   ├── models/
+│   │   ├── User.js       # Modelo de usuário
+│   │   ├── Note.js       # Modelo de nota
+│   │   └── Category.js   # Modelo de categoria
+│   ├── routes/
+│   │   ├── users.js      # Rotas de autenticação
+│   │   ├── notes.js      # Rotas de notas
+│   │   └── categories.js # Rotas de categorias
+│   └── middleware/
+│       └── auth.js       # Middleware de autenticação
+└── docker-compose.yml    # Configuração Docker
+NotasAppNextjs (Versão Final)
+/NotasAppNextjs/
+├── src/
+│   ├── app/
+│   │   ├── globals.css   # Estilos globais
+│   │   ├── layout.tsx    # Layout principal
+│   │   └── page.tsx      # Página principal
+│   ├── components/
+│   │   ├── Sidebar.tsx           # Barra lateral
+│   │   ├── NoteGrid.tsx          # Grade de notas
+│   │   ├── NoteModal.tsx         # Modal de edição
+│   │   ├── CategoryModal.tsx     # Modal de categorias
+│   │   ├── EmptyTrashModal.tsx   # Modal de esvaziar lixeira
+│   │   ├── RestoreNoteModal.tsx  # Modal de restauração
+│   │   ├── LoginModal.tsx        # Modal de login
+│   │   ├── RegisterModal.tsx     # Modal de registro
+│   │   └── WelcomeModal.tsx      # Modal de boas-vindas
+│   └── hooks/
+│       ├── useAuth.ts        # Hook de autenticação
+│       ├── useNotes.ts       # Hook de notas
+│       ├── useCategories.ts  # Hook de categorias
+│       └── useSync.ts        # Hook de sincronização
+└── public/
+    └── assets/              # Imagens e recursos estáticos
+Bibliotecas e Tecnologias
+Frontend
+Next.js: Framework React para renderização do lado do servidor e geração de sites estáticos
+React: Biblioteca para construção de interfaces de usuário
+TypeScript: Superset tipado de JavaScript
+Tailwind CSS: Framework CSS utilitário para estilização
+Headless UI: Componentes de interface acessíveis e sem estilo
+Sonner: Biblioteca para notificações toast
+UUID: Geração de identificadores únicos
+Backend
+Node.js: Ambiente de execução JavaScript do lado do servidor
+Express: Framework web para Node.js
+MongoDB: Banco de dados NoSQL
+Mongoose: ODM (Object Data Modeling) para MongoDB
+JSON Web Token (JWT): Autenticação baseada em tokens
+Bcrypt: Hashing de senhas
+Cors: Middleware para habilitar CORS
+Dotenv: Carregamento de variáveis de ambiente
+DevOps
+Docker: Containerização da aplicação
+Docker Compose: Orquestração de contêineres
+Vercel: Plataforma de hospedagem para o frontend Next.js
+Funcionalidades
+Gerenciamento de Notas
+Criar notas: Adicionar novas notas com título, conteúdo e tags
+Editar notas: Modificar notas existentes
+Excluir notas: Mover notas para a lixeira
+Arquivar notas: Arquivar notas por 30 dias
+Favoritar notas: Marcar notas como favoritas
+Tarefas: Criar listas de tarefas com itens marcáveis
+Anotações rápidas: Notas temporárias com prazo de 5 dias
+Restaurar notas: Recuperar notas da lixeira
+Esvaziar lixeira: Excluir permanentemente todas as notas da lixeira
+Organização
+Categorias: Criar e gerenciar categorias personalizadas
+Tags: Adicionar tags às notas para melhor organização
+Filtros: Filtrar notas por categoria, status ou tipo
+Pesquisa: Buscar notas por conteúdo ou título
+Visualização em grade/lista: Alternar entre visualizações
+Usuário e Sincronização
+Registro: Criar nova conta de usuário
+Login: Autenticar-se no sistema
+Boas-vindas: Tela personalizada após login
+Sincronização: Sincronizar notas entre dispositivos
+Modo offline: Trabalhar sem conexão com sincronização posterior
+Preferências: Salvar configurações do usuário
+Interface
+Tema claro/escuro: Alternar entre temas
+Responsividade: Adaptação a diferentes tamanhos de tela
+Notificações: Feedback visual para ações importantes
+Modais: Interfaces para interações específicas
+Componentes e Hooks
+Componentes Principais
+Sidebar.tsx
+Barra lateral que contém:
+Logo do aplicativo
+Menu de navegação entre categorias
+Status de sincronização
+Botões de login/registro ou perfil do usuário
+Alternador de tema claro/escuro
+NoteGrid.tsx
+Exibe as notas em formato de grade ou lista:
+Renderiza cards de notas
+Implementa visualização em grade ou lista
+Gerencia interações com as notas (favoritar, arquivar, excluir)
+Exibe mensagem quando não há notas
+NoteModal.tsx
+Modal para criação e edição de notas:
+Campos para título e conteúdo
+Seleção de categorias
+Opções para marcar como tarefa ou favorito
+Botões para salvar ou cancelar
+CategoryModal.tsx
+Modal para gerenciamento de categorias:
+Criação de novas categorias
+Edição de categorias existentes
+Seleção de cores para categorias
+LoginModal.tsx e RegisterModal.tsx
+Modais para autenticação:
+Formulários de login e registro
+Validação de campos
+Feedback de erros
+Alternância entre login e registro
+WelcomeModal.tsx
+Modal de boas-vindas após login:
+Exibe mensagem personalizada com nome do usuário
+Informa sobre sincronização automática
+Botão para começar a usar o aplicativo
+Hooks Personalizados
+useAuth.ts
+Gerencia autenticação e estado do usuário:
+Login e registro de usuários
+Armazenamento seguro de tokens
+Verificação de autenticação
+Gerenciamento de preferências do usuário
+useNotes.ts
+Gerencia operações relacionadas a notas:
+Carregamento de notas do localStorage ou API
+Adição, edição e exclusão de notas
+Filtragem de notas por categoria ou busca
+Operações de favoritar, arquivar e restaurar
+useCategories.ts
+Gerencia operações relacionadas a categorias:
+Carregamento de categorias do localStorage ou API
+Criação, edição e exclusão de categorias
+Associação de cores às categorias
+useSync.ts
+Gerencia sincronização de dados:
+Verificação de status de conexão
+Sincronização automática quando online
+Rastreamento de alterações pendentes
+Resolução de conflitos
+Fluxos de Usuário
+Fluxo de Autenticação
+Usuário clica em "Login" ou "Registrar"
+Preenche o formulário correspondente
+Após autenticação bem-sucedida, vê a tela de boas-vindas
+Suas notas são sincronizadas automaticamente
+Fluxo de Criação de Nota
+Usuário digita no campo de entrada rápida ou clica em "Nova nota"
+Preenche título, conteúdo e seleciona categorias
+Opcionalmente marca como favorito ou tarefa
+Salva a nota, que aparece na grade principal
+A nota é sincronizada automaticamente se online
+Fluxo de Organização
+Usuário seleciona uma categoria na barra lateral
+Visualiza apenas as notas dessa categoria
+Pode alternar entre visualização em grade ou lista
+Pode criar novas categorias personalizadas
+Fluxo de Arquivamento e Exclusão
+Usuário clica no ícone de arquivar ou excluir em uma nota
+Notas arquivadas ficam disponíveis por 30 dias
+Notas excluídas vão para a lixeira
+Notas na lixeira podem ser restauradas ou excluídas permanentemente
+Armazenamento e Sincronização
+Armazenamento Local
+localStorage: Armazena notas, categorias e preferências localmente
+Estrutura de dados: JSON para notas e categorias
+Estado de sincronização: Rastreia quais itens precisam ser sincronizados
+Sincronização em Nuvem
+API RESTful: Comunicação com o backend
+JWT: Autenticação segura para operações de API
+Estratégia offline-first: Funciona sem conexão e sincroniza quando online
+Resolução de conflitos: Baseada em versões de servidor e cliente
+Implantação
+Frontend (Next.js)
+Vercel: Hospedagem do frontend Next.js
+URL permanente: https://eqhbjuiz.manus.space
+Exportação estática: Build otimizado para performance
+Backend (Node.js + MongoDB )
+Docker: Containerização do backend e banco de dados
+MongoDB Atlas: Serviço de banco de dados na nuvem
+Variáveis de ambiente: Configuração segura via .env
+Backup e Restauração
+Backup de Dados
+Exportação de notas: Função para exportar todas as notas em formato JSON
+Exportação de categorias: Função para exportar categorias em formato JSON
+Backup automático: Realizado a cada 24 horas no servidor
+Restauração
+Importação de notas: Função para importar notas de arquivo JSON
+Importação de categorias: Função para importar categorias de arquivo JSON
+Resolução de conflitos: Estratégia para lidar com duplicatas durante importação

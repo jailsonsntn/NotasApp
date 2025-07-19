@@ -1,0 +1,149 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  /* Variáveis existentes */
+  --primary-color: #1a73e8;
+  --primary-hover: #1557b0;
+  --secondary-color: #5f6368;
+  --success-color: #0f9d58;
+  --danger-color: #db4437;
+  --warning-color: #f4b400;
+  --text-color: #202124;
+  --muted-color: #5f6368;
+  --border-color: #dadce0;
+  --divider-color: #e0e0e0;
+  --card-bg: #ffffff;
+  --bg-color: #f1f3f4;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --modal-overlay: rgba(0, 0, 0, 0.5);
+
+  /* Variáveis do Tailwind/Radix UI */
+  --background: 0 0% 100%;
+  --foreground: 222.2 84% 4.9%;
+  --card: 0 0% 100%;
+  --card-foreground: 222.2 84% 4.9%;
+  --popover: 0 0% 100%;
+  --popover-foreground: 222.2 84% 4.9%;
+  --primary: 222.2 47.4% 11.2%;
+  --primary-foreground: 210 40% 98%;
+  --secondary: 210 40% 96%;
+  --secondary-foreground: 222.2 84% 4.9%;
+  --muted: 210 40% 96%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+  --accent: 210 40% 96%;
+  --accent-foreground: 222.2 84% 4.9%;
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 214.3 31.8% 91.4%;
+  --input: 214.3 31.8% 91.4%;
+  --ring: 222.2 84% 4.9%;
+  --radius: 0.5rem;
+}
+
+.dark-theme {
+  /* Variáveis existentes */
+  --primary-color: #8ab4f8;
+  --primary-hover: #aecbfa;
+  --secondary-color: #9aa0a6;
+  --success-color: #81c995;
+  --danger-color: #f28b82;
+  --warning-color: #fdd663;
+  --text-color: #e8eaed;
+  --muted-color: #9aa0a6;
+  --border-color: #5f6368;
+  --divider-color: #3c4043;
+  --card-bg: #2d2e30;
+  --bg-color: #202124;
+  --shadow-color: rgba(0, 0, 0, 0.3);
+  --modal-overlay: rgba(0, 0, 0, 0.7);
+
+  /* Variáveis do Tailwind/Radix UI para modo escuro */
+  --background: 222.2 84% 4.9%;
+  --foreground: 210 40% 98%;
+  --card: 222.2 84% 4.9%;
+  --card-foreground: 210 40% 98%;
+  --popover: 222.2 84% 4.9%;
+  --popover-foreground: 210 40% 98%;
+  --primary: 210 40% 98%;
+  --primary-foreground: 222.2 47.4% 11.2%;
+  --secondary: 217.2 32.6% 17.5%;
+  --secondary-foreground: 210 40% 98%;
+  --muted: 217.2 32.6% 17.5%;
+  --muted-foreground: 215 20.2% 65.1%;
+  --accent: 217.2 32.6% 17.5%;
+  --accent-foreground: 210 40% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 210 40% 98%;
+  --border: 217.2 32.6% 17.5%;
+  --input: 217.2 32.6% 17.5%;
+  --ring: 212.7 26.8% 83.9%;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--bg-color)] text-[var(--text-color)] transition-colors duration-200;
+  }
+}
+
+@layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md font-medium transition-colors duration-200;
+  }
+  
+  .btn-primary {
+    @apply bg-[var(--primary-color)] text-white hover:bg-[var(--primary-hover)];
+  }
+  
+  .btn-secondary {
+    @apply bg-[var(--secondary-color)] text-white hover:opacity-90;
+  }
+  
+  .btn-danger {
+    @apply bg-[var(--danger-color)] text-white hover:opacity-90;
+  }
+  
+  .sidebar-item {
+    @apply flex items-center gap-3 p-3 rounded-lg cursor-pointer hover:bg-black/5 dark:hover:bg-white/10 transition-colors;
+  }
+  
+  .sidebar-item.active {
+    @apply bg-[var(--primary-color)] text-white hover:bg-[var(--primary-hover)];
+  }
+  
+  .note-card {
+    @apply bg-[var(--card-bg)] rounded-lg p-4 shadow-md hover:shadow-lg transition-shadow relative;
+  }
+  
+  .tag {
+    @apply inline-block px-2 py-1 text-xs rounded-full bg-[var(--primary-color)] text-white mr-1 mb-1;
+  }
+  
+  .category-tag {
+    @apply inline-block px-2 py-1 text-xs rounded-full text-white mr-1 mb-1;
+  }
+  
+  .modal-input {
+    @apply w-full p-2 mb-3 border border-[var(--border-color)] rounded-md bg-[var(--card-bg)] text-[var(--text-color)];
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--secondary-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary-color);
+}
